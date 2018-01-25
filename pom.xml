@@ -1,0 +1,74 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.linpeng</groupId>
+	<artifactId>aengine</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>aengine</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<ik.version>1.0.0</ik.version>
+		<h2.version>1.4.196</h2.version>
+		<dbutils.version>1.7</dbutils.version>
+		<act.version>1.6.6</act.version>
+	</properties>
+
+	<parent>
+		<groupId>org.actframework</groupId>
+		<artifactId>act-starter-parent</artifactId>
+		<version>1.6.4.0</version>
+	</parent>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.actframework</groupId>
+			<artifactId>act</artifactId>
+			<version>${act.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/commons-dbutils/commons-dbutils -->
+		<!-- <dependency> -->
+		<!-- <groupId>commons-dbutils</groupId> -->
+		<!-- <artifactId>commons-dbutils</artifactId> -->
+		<!-- <version>${dbutils.version}</version> -->
+		<!-- </dependency> -->
+
+		<!-- https://mvnrepository.com/artifact/com.h2database/h2 -->
+		<!-- <dependency> -->
+		<!-- <groupId>com.h2database</groupId> -->
+		<!-- <artifactId>h2</artifactId> -->
+		<!-- <version>${h2.version}</version> -->
+		<!-- <scope>test</scope> -->
+		<!-- </dependency> -->
+
+		<dependency>
+			<groupId>gl.linpeng</groupId>
+			<artifactId>ikanalyzer</artifactId>
+			<version>${ik.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.3</version>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+
+		</plugins>
+	</build>
+</project>
