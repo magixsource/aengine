@@ -6,11 +6,10 @@ import java.util.Map;
 
 import javax.inject.Inject;
 
-import act.event.EventBus;
 import gl.linpeng.aengine.api.IAengineApi;
-import gl.linpeng.aengine.event.HealthPricipleSaveEvent;
 import gl.linpeng.aengine.model.PrincipleItem;
 import gl.linpeng.aengine.service.IAnalyzerService;
+import gl.linpeng.aengine.service.IHealthService;
 
 /**
  * 引擎API实现类
@@ -21,26 +20,20 @@ public class AengineApiImpl implements IAengineApi {
 
 	@Inject
 	IAnalyzerService analyzerService;
-
 	@Inject
-	EventBus eventBus;
+	IHealthService healthService;
 
 	@Override
 	public boolean readContent(String content) {
-		// analyzer
-		Map<String, List<PrincipleItem>> stashMap;
 		try {
-			stashMap = analyzerService.analyze(content);
+			// analyzer
+			Map<String, List<PrincipleItem>> stashMap = analyzerService.analyze(content);
+			// batch save
+			healthService.batchSave(stashMap);
 		} catch (IOException e) {
 			e.printStackTrace();
 			return false;
 		}
-
-		// batch save
-		HealthPricipleSaveEvent event = new HealthPricipleSaveEvent();
-		event.setData(stashMap);
-		eventBus.emitAsync(event);
-
 		return true;
 	}
 
