@@ -15,7 +15,6 @@ import com.linpeng.aengine.model.Principle;
 import com.linpeng.aengine.model.PrincipleItem;
 import gl.linpeng.analyzer.core.IKSegmenter;
 import gl.linpeng.analyzer.core.Lexeme;
-import org.apache.lucene.util.CollectionUtil;
 import org.beetl.sql.core.db.KeyHolder;
 
 import javax.inject.Inject;
@@ -117,10 +116,13 @@ public class AengineApiImpl implements IAengineApi {
 
             for (PrincipleItem principleItem : entry.getValue()) {
                 System.out.println(" " + principleItem.getAdverb() + ":" + principleItem.getTarget());
-                PrincipleItem dbPrincipleItem = principleItemMapper.templateOne(principleItem);
-                if (dbPrincipleItem != null) {
+                // PrincipleItem dbPrincipleItem = principleItemMapper.templateOne(principleItem);
+                List<PrincipleItem> principleItemList = principleItemMapper.template(principleItem);
+                if (principleItemList == null || principleItemList.isEmpty()) {
                     Long id = principleItemMapper.insertReturnKey(principleItem).getLong();
                     principleItem.setId(id);
+                }else {
+                	principleItem.setId(principleItemList.get(0).getId());
                 }
                 // wrap to principle
                 Principle principle = new Principle(disease.getId(), principleItem.getId());
