@@ -1,4 +1,4 @@
-package com.linpeng;
+package gl.linpeng;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
