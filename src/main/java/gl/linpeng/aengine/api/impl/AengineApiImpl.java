@@ -1,4 +1,4 @@
-package com.linpeng.aengine.api.impl;
+package gl.linpeng.aengine.api.impl;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -7,12 +7,11 @@ import java.io.InputStreamReader;
 import java.io.Reader;
 import java.util.*;
 
-import com.linpeng.aengine.api.IAengineApi;
-
-import com.linpeng.aengine.common.Constants;
-import com.linpeng.aengine.model.Disease;
-import com.linpeng.aengine.model.Principle;
-import com.linpeng.aengine.model.PrincipleItem;
+import gl.linpeng.aengine.api.IAengineApi;
+import gl.linpeng.aengine.common.Constants;
+import gl.linpeng.aengine.model.Disease;
+import gl.linpeng.aengine.model.Principle;
+import gl.linpeng.aengine.model.PrincipleItem;
 import gl.linpeng.analyzer.core.IKSegmenter;
 import gl.linpeng.analyzer.core.Lexeme;
 import org.beetl.sql.core.db.KeyHolder;

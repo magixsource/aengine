@@ -1,13 +1,13 @@
-package com.linpeng.aengine.controller;
+package gl.linpeng.aengine.controller;
 
 import javax.inject.Inject;
 
-import com.linpeng.aengine.model.PrincipleItem;
 import org.osgl.mvc.annotation.GetAction;
 import org.osgl.mvc.annotation.PostAction;
 
-import com.linpeng.aengine.api.IAengineApi;
 import act.controller.Controller;
+import gl.linpeng.aengine.api.IAengineApi;
+import gl.linpeng.aengine.model.PrincipleItem;
 
 import java.util.ArrayList;
 import java.util.List;

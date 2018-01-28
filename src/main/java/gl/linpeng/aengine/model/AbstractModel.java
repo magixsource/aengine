@@ -1,4 +1,4 @@
-package com.linpeng.aengine.model;
+package gl.linpeng.aengine.model;
 
 import java.util.Date;
 

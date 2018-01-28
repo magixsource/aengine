@@ -1,6 +1,6 @@
-package com.linpeng.aengine.service;
+package gl.linpeng.aengine.service;
 
-import com.linpeng.aengine.model.Disease;
+import gl.linpeng.aengine.model.Disease;
 
 public class PrincipleService {
 

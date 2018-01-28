@@ -2,7 +2,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.linpeng</groupId>
+	<groupId>gl.linpeng</groupId>
 	<artifactId>aengine</artifactId>
 	<version>1.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
@@ -13,8 +13,6 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<ik.version>1.0.0</ik.version>
-		<!--<h2.version>1.4.196</h2.version>-->
-		<!--<dbutils.version>1.7</dbutils.version>-->
 		<act.version>1.6.6</act.version>
 	</properties>
 
@@ -30,34 +28,19 @@
 			<artifactId>act</artifactId>
 			<version>${act.version}</version>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/commons-dbutils/commons-dbutils -->
-		<!-- <dependency> -->
-		<!-- <groupId>commons-dbutils</groupId> -->
-		<!-- <artifactId>commons-dbutils</artifactId> -->
-		<!-- <version>${dbutils.version}</version> -->
-		<!-- </dependency> -->
+		<dependency>
+			<groupId>org.actframework</groupId>
+			<artifactId>act-beetlsql</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+		</dependency>
 
-		<!-- https://mvnrepository.com/artifact/com.h2database/h2 -->
-		 <!--<dependency>-->
-		 <!--<groupId>com.h2database</groupId>-->
-		 <!--<artifactId>h2</artifactId>-->
-		 <!--<version>${h2.version}</version>-->
-		<!--&lt;!&ndash; <scope>test</scope> &ndash;&gt;-->
-             <!--&lt;!&ndash;<scope>runtime</scope>&ndash;&gt;-->
-		 <!--</dependency>-->
-        <dependency>
-            <groupId>org.actframework</groupId>
-            <artifactId>act-beetlsql</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.h2database</groupId>
-            <artifactId>h2</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>com.zaxxer</groupId>
-            <artifactId>HikariCP-java7</artifactId>
-        </dependency>
+		<dependency>
+			<groupId>com.zaxxer</groupId>
+			<artifactId>HikariCP-java7</artifactId>
+		</dependency>
 
 		<dependency>
 			<groupId>gl.linpeng</groupId>
