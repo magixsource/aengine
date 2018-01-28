@@ -9,7 +9,6 @@ import act.controller.Controller;
 import gl.linpeng.aengine.api.IAengineApi;
 import gl.linpeng.aengine.model.PrincipleItem;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
