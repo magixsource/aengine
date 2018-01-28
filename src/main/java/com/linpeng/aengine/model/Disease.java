@@ -1,16 +1,12 @@
 package com.linpeng.aengine.model;
 
-import org.beetl.sql.core.annotatoin.AutoID;
+import javax.persistence.Entity;
+
 import org.beetl.sql.core.mapper.BaseMapper;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-
 @Entity
-public class Disease {
+public class Disease extends AbstractModel{
 
-    @Id
-    private Long id;
     private String name;
 
     public Disease() {
@@ -18,20 +14,6 @@ public class Disease {
 
     public Disease(String name) {
         this.name = name;
-    }
-
-    public Disease(Long id, String name) {
-        this.id = id;
-        this.name = name;
-    }
-
-    @AutoID
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getName() {

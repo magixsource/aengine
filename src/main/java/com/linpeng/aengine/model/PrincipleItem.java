@@ -1,64 +1,49 @@
 package com.linpeng.aengine.model;
 
-import com.linpeng.aengine.common.Constants.Adverb;
-import com.linpeng.aengine.common.Constants.PrincipleItemType;
-import org.beetl.sql.core.annotatoin.AutoID;
+import javax.persistence.Entity;
+
 import org.beetl.sql.core.mapper.BaseMapper;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-
 @Entity
-public class PrincipleItem {
+public class PrincipleItem extends AbstractModel {
 
-    @Id
-    private Long id;
-    private Integer adverb;
-    private Integer type;
-    private String target;
+	private Integer adverb;
+	private Integer type;
+	private String target;
 
-    public PrincipleItem() {
-    }
+	public PrincipleItem() {
+	}
 
-    public PrincipleItem(Integer adverb, Integer type, String target) {
-        this.adverb = adverb;
-        this.type = type;
-        this.target = target;
-    }
+	public PrincipleItem(Integer adverb, Integer type, String target) {
+		this.adverb = adverb;
+		this.type = type;
+		this.target = target;
+	}
 
-    @AutoID
-    public Long getId() {
-        return id;
-    }
+	public Integer getAdverb() {
+		return adverb;
+	}
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+	public void setAdverb(Integer adverb) {
+		this.adverb = adverb;
+	}
 
-    public Integer getAdverb() {
-        return adverb;
-    }
+	public Integer getType() {
+		return type;
+	}
 
-    public void setAdverb(Integer adverb) {
-        this.adverb = adverb;
-    }
+	public void setType(Integer type) {
+		this.type = type;
+	}
 
-    public Integer getType() {
-        return type;
-    }
+	public String getTarget() {
+		return target;
+	}
 
-    public void setType(Integer type) {
-        this.type = type;
-    }
+	public void setTarget(String target) {
+		this.target = target;
+	}
 
-    public String getTarget() {
-        return target;
-    }
-
-    public void setTarget(String target) {
-        this.target = target;
-    }
-
-    public interface Mapper extends BaseMapper<PrincipleItem> {
-    }
+	public interface Mapper extends BaseMapper<PrincipleItem> {
+	}
 }
